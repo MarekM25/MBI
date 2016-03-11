@@ -10,8 +10,8 @@ app.controller("AppCtrl",function($scope,$http) {
 	
 	$scope.msg = 'not clicked';
 	
-	  $scope.go = function() {
+	$scope.go = function() {
 
-    $scope.msg = 'clicked';
+    medianSearch();
   }
 })
