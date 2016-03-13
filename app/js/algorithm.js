@@ -1,3 +1,3 @@
 function medianSearch() {
-     console.log('ok');
+    console.log('ok');
 }
