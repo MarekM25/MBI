@@ -10,8 +10,10 @@ app.controller("AppCtrl",function($scope,$http) {
 	
 	$scope.msg = 'not clicked';
 	
-	$scope.go = function() {
-
+	$scope.medianSearchAlgorithm = function() {
+        console.log($scope.iloscSekwencji);
+        console.log($scope.dlugoscSekwencji);
+        console.log($scope.sekwencje);
     medianSearch();
   }
 })

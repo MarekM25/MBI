@@ -12,15 +12,15 @@
 {{msg}}
 <div class="form-group col-lg-2">
         <h3>Ilość sekwencji:</h3>
-		<input type="number" class="form-control">
+		<input ng-model = "iloscSekwencji" type="number" class="form-control">
         <h3>Długośc sekwencji:</h3>
-		<input type="number" class="form-control">
+		<input ng-model ="dlugoscSekwencji" type="number" class="form-control">
 </div>
  <div class="form-group">
   <label for="comment">Sekwencje:</label>
-  <textarea class="form-control" rows="5" id="comment"></textarea>
+  <textarea ng-model ="sekwencje" class="form-control" rows="5" id="comment"></textarea>
 </div>
- <button type="button" class="btn btn-info" ng-click='go()'>Wykonaj algorytm</button>
+ <button type="button" class="btn btn-info" ng-click='medianSearchAlgorithm()'>Wykonaj algorytm</button>
 
 
       <h4>Wyszukiwania motywów dla zbioru sekwencji metodą wyszukiwania mediany</h4>
