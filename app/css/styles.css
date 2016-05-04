@@ -5,4 +5,9 @@ html, body, .container-table {
   display: table; }
 
 body {
-  background: green; }
+  background: black;
+  color: white;
+  margin-top: 30px; }
+
+label {
+  font-size: 20px; }
