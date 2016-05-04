@@ -37,6 +37,7 @@
 				while (result.length < l){
 					result = "0" + result;
 				}
+				console.log('Result ' + result);
 				return result
 			}
 		}
@@ -85,6 +86,7 @@
 			prevV = v;
 			if (i < l) { 
 				prefix = v.substring(0, i);
+				console.log('Prefix ' + prefix);
 				optimistic = distance(X,prefix);
 				//document.write("Comparing " + optimistic + " > " + best + "<br>");
 				if (optimistic > best) {

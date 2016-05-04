@@ -17,3 +17,8 @@ app.controller("AppCtrl",function($scope,$http) {
     medianSearch();
   }
 })
+
+// X - tablica ciągów sekwencji
+// t - ilość sekwencji
+// n - długośc pojedynczej sekwencji
+// l - długość szukanego motywu
