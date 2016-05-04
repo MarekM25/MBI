@@ -14,7 +14,7 @@ app.controller("AppCtrl",function($scope,$http) {
         console.log($scope.iloscSekwencji);
         console.log($scope.dlugoscSekwencji);
         console.log($scope.sekwencje);
-    medianSearch();
+        medianSearch($scope.sekwencje,$scope.dlugoscSekwencji);
   }
 })
 
