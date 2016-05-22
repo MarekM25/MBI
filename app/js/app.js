@@ -13,8 +13,12 @@ app.controller("AppCtrl",function($scope,$http) {
         medianSearch($scope.sekwencje,$scope.dlugoscSekwencji);
   }
   
-}
-})
+  $scope.fillSampleData = function() {
+	  $scope.dlugoscSekwencji = 3;
+	  $scope.sekwencje = '101011';
+  }
+  
+});
 
 // X - tablica ciągów sekwencji
 // t - ilość sekwencji

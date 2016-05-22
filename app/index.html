@@ -10,7 +10,7 @@
 <body ng-app="app" ng-controller="AppCtrl as app">
 <div class="container container-table">
       <h3 class="text-center">Wyszukiwania motywów dla zbioru sekwencji metodą wyszukiwania mediany</h3>
-<div class="form-group">
+<div class="form-group" id="main_form">
 	<div class="row">
 		<div class="col-md-4">
 				<label for="dlugoscSekwencji">Szukana długość wzorca</label>
@@ -23,18 +23,22 @@
 				<label for="dlugoscSekwencji">Aktualny wynik</label>
 				
 				</br>
+				</br>
+				</br>
 		</div>
-	</div>
-	</br>
-	</br>
+	</div
+</div>
+
+
+
 	<div class="row">
 			<label for="sekwencje">Sekwencje</label>
 	  <textarea id="sekwencje" ng-model ="sekwencje" class="form-control" rows="8" id="comment"></textarea>
 	  </br>
-		<button type="button" class="btn btn-info" ng-keyup="$event.keyCode == 112 ? medianSearchAlgorithm() : ''" ng-click='medianSearchAlgorithm()'>Wykonaj algorytm (F1)</button>
-		<button type="button" class="btn btn-info" ng-keyup="$event.keyCode == 113 ? medianSearchAlgorithm() : ''" ng-click='medianSearchAlgorithm()'>Pojedynczy krok algorytmu (F2)</button>
-		<button type="button" class="btn btn-info" ng-keyup="$event.keyCode == 114 ? medianSearchAlgorithm() : ''" ng-click='medianSearchAlgorithm()'>Skocz o 10 kroków (F3)</button>
-		<button type="button" class="btn btn-info" ng-keyup="$event.keyCode == 115 ? medianSearchAlgorithm() : ''" ng-click='medianSearchAlgorithm()'>Wypełnij przykładowymi danymi (F4)</button>
+		<button type="button" class="btn btn-info"  ng-click='medianSearchAlgorithm()'>Wykonaj algorytm </button>
+		<button type="button" class="btn btn-info" ng-click='medianSearchAlgorithm()'>Pojedynczy krok algorytmu</button>
+		<button type="button" class="btn btn-info"  ng-click='medianSearchAlgorithm()'>Skocz o 10 kroków </button>
+		<button type="button" class="btn btn-info"  ng-click='fillSampleData()'>Wypełnij przykładowymi danymi</button>
 	</div>
 </div>
 
