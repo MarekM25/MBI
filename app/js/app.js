@@ -113,26 +113,31 @@ app.controller("AppCtrl",function($scope,$http) {
             log('Krok '+stepNumber);
             prevV = v;
             if (i < l) {
-                log('Aktualna wartość prefixu '+numbersToLetters(prefix));
                 prefix = v.substring(0, i);
                 optimistic = distance(X,prefix);
-
+				log('Aktualna wartość prefixu '+numbersToLetters(prefix) + ' oceniona optymistycznie na ' + optimistic);
                 if (optimistic > best) {
+					log("Optymistyczna ocena jest gorsza niż dotychczasowa najlepsza (" + best + "), pomijam poddrzewo " + numbersToLetters(prefix));
                     v = permute(prefix, true);
                     if (prevV > v) break;
                 } else {
-                    log('Prefix wydłużony')
+                    //log('Prefix wydłużony')
                     i += 1;
                 }
             } else {
                 current = distance(X,v);
+				log("Porównywanie napisu " + numbersToLetters(v) + " z dotychczasowo najlepszym " + numbersToLetters(median));
                 if (current < best) {
-                    best = current;
+                    log("Napis " + numbersToLetters(v) + " jest lepszy niż " + numbersToLetters(median) + " aktualizacja...");
+					best = current;
                     median = v;
                     log("Mediana = " + numbersToLetters(median) + " wartość odległości hamminga: " + best);
-                }
+                } else {
+			log("Brak poprawy")
+		}
                 v = permute(v,false);
                 if (prevV > v) break;
+				log("Następna permutacja: " + numbersToLetters(v));
                 i = 1;
             }
             ++stepNumber;
