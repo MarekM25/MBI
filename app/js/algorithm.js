@@ -7,7 +7,8 @@ function medianSearch(X,l) {
 		
 		for (var i = 0; i < t; i++) {
 			X[i] = lettersToNumbers(X[i]);
-		}		
+		}
+
 
 		
 		function lettersToNumbers(str)
@@ -96,10 +97,12 @@ function medianSearch(X,l) {
 			if (i < l) { 
 				prefix = v.substring(0, i);
 				optimistic = distance(X,prefix);
+
 				if (optimistic > best) {
 					v = permute(prefix, true);
 					if (prevV > v) break;
 				} else {
+					//
 					i += 1;
 				}
 			} else {
@@ -108,11 +111,14 @@ function medianSearch(X,l) {
 					best = current;
 					median = v;
 					console.log("Median = " + numbersToLetters(median) + " score: " + best);
+					//$scope.result = numbersToLetters(median);
+					//stop
 				}
 				v = permute(v,false);
 				if (prevV > v) break;
 				i = 1;
 			}
 		}
-			
+		
+		
 }

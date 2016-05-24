@@ -7,7 +7,7 @@
     <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/styles.css" rel="stylesheet">
 </head>
-<body ng-app="app" ng-controller="AppCtrl as app">
+<body ng-app="app" ng-controller="AppCtrl as app" ng-init="iter=0;log=''">
 <div class="container container-table">
       <h3 class="text-center">Wyszukiwania motywów dla zbioru sekwencji metodą wyszukiwania mediany</h3>
 <div class="form-group" id="main_form">
@@ -20,9 +20,10 @@
 		<div class="col-md-2">
 		</div>
 		<div class="col-md-6">
-				<label for="dlugoscSekwencji">Aktualny wynik</label>
-				
-				</br>
+				<label>Wynik: {{result}}</label>
+			</br>
+				<label>Odległość (w sensie hamminga): {{hamming}}</label>
+
 				</br>
 				</br>
 		</div>
@@ -36,9 +37,14 @@
 	  <textarea id="sekwencje" ng-model ="sekwencje" class="form-control" rows="8" id="comment"></textarea>
 	  </br>
 		<button type="button" class="btn btn-info"  ng-click='medianSearchAlgorithm()'>Wykonaj algorytm </button>
-		<button type="button" class="btn btn-info" ng-click='medianSearchAlgorithm()'>Pojedynczy krok algorytmu</button>
-		<button type="button" class="btn btn-info"  ng-click='medianSearchAlgorithm()'>Skocz o 10 kroków </button>
+		<!--<button type="button" class="btn btn-info" ng-click='simpleStep()'>Pojedynczy krok algorytmu</button>-->
+		<!--<button type="button" class="btn btn-info"  ng-click='medianSearchAlgorithm()'>Skocz o 10 kroków </button>-->
 		<button type="button" class="btn btn-info"  ng-click='fillSampleData()'>Wypełnij przykładowymi danymi</button>
+	</div>
+	<div class="row">
+		<br>
+		<label for="sekwencje">Log wykonania</label>
+	<textarea id="sekwencje" ng-model ="log" class="form-control" rows="8" id="comment"></textarea>
 	</div>
 </div>
 
