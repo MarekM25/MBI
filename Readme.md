@@ -1,2 +1,17 @@
-Je¿eli chcecie mieæ real-time edytowanie strony to zainstalujcie node.js, a potem w folderze:
-npm install
+## Projekt MBI
+Budowanie:
+
+Instalacja node.js
+Linux:
+apt-get install node
+
+Windows:
+https://nodejs.org/en/download/
+
+W g³ównym folderze folderze, aby pboraæ paczki do folderu "node_modules":
+npm install 
+
+Aby odpaliæ testy jednostkowe bedac w glownym katalogu:  
+Linux: ./node_modules/karma/bin/karma start karma.conf.js
+Windows: npm install -g karma-cli
+karma start karma.conf.js
