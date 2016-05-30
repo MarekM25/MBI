@@ -11,7 +11,7 @@ app.controller("AppCtrl",function($scope,$http) {
     {
         var X = $scope.sekwencje;
         var l = $scope.dlugoscSekwencji;
-        console.log($scope.sekwencje);
+        //console.log($scope.sekwencje);
         X = X.split('\n');
 
         var t = X.length;
