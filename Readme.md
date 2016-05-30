@@ -7,9 +7,9 @@ Instalacja node.js
 W glównym folderze folderze, aby pobrac paczki do folderu "node_modules":
 npm install 
 
-Aby odpaliæ testy jednostkowe bedac w glownym katalogu:  
+Aby odpalic testy jednostkowe bedac w glownym katalogu:  
 
 * Linux: ./node_modules/karma/bin/karma start karma.conf.js
-* Windows: npm install -g karma-cli
-
-karma start karma.conf.js
+* Windows: 
+  1. npm install -g karma-cli
+  2. karma start karma.conf.js
