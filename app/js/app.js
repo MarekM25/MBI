@@ -4,16 +4,37 @@
 
 var app = angular.module("app",[]);
 
-app.controller("AppCtrl",function($scope,$http) {
+app.controller("AppCtrl",function($scope) {
     var app = this;
-	
+	$scope.MyRegex = "\\d";
+
+    function validate(X,l)
+    {
+        $scope.notValid = false;
+        $scope.validationText = '';
+        if (!angular.isNumber(l)) {
+            $scope.notValid = true;
+            $scope.validationText += "Długość sekwencji musi być liczbą.";
+        }
+        for (var i = 0; i < X.length; ++i)
+        {
+            var regexp = new RegExp("[ACGT]{"+l+"}");
+            if(!regexp.test(X[i])) {
+                $scope.validationText += "Sekwencje muszą być tej samej długości i składać się wyłącznie z liter A, C,G, T.";
+                $scope.notValid = true;
+                break;
+            }
+        }
+        return !$scope.notValid;
+    }
+
 	$scope.medianSearchAlgorithm = function() 
     {
+
         var X = $scope.sekwencje;
         var l = $scope.dlugoscSekwencji;
-        //console.log($scope.sekwencje);
         X = X.split('\n');
-
+        if (!validate(X,l)) return;
         var t = X.length;
         var n = X[0].length;
 

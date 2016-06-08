@@ -7,19 +7,22 @@
     <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/styles.css" rel="stylesheet">
 </head>
-<body ng-app="app" ng-controller="AppCtrl as app" ng-init="iter=0;log=''">
+<body ng-app="app" ng-controller="AppCtrl as app" ng-init="iter=0;log='';notValid=false;sekwencje='';validationText=''">
 <div class="container container-table">
       <h3 class="text-center">Wyszukiwania motywów dla zbioru sekwencji metodą wyszukiwania mediany</h3>
 <div class="form-group" id="main_form">
 	<div class="row">
+		<div class="alert alert-danger" ng-show="notValid" ng-cloak>
+			{{validationText}}
+			</div>
 		<div class="col-md-4">
 				<label for="dlugoscSekwencji">Szukana długość wzorca</label>
-				<input id="dlugoscSekwencji" ng-model ="dlugoscSekwencji" type="number" class="form-control">
+				<input id="dlugoscSekwencji"  ng-model ="dlugoscSekwencji" type="number" class="form-control">
 				</br>
 		</div>
 		<div class="col-md-2">
 		</div>
-		<div class="col-md-6">
+		<div class="col-md-6" ng-cloak>
 				<label>Wynik: {{result}}</label>
 			</br>
 				<label>Odległość (w sensie hamminga): {{hamming}}</label>
@@ -27,14 +30,14 @@
 				</br>
 				</br>
 		</div>
-	</div
+
 </div>
 
 
 
 	<div class="row">
 			<label for="sekwencje">Sekwencje</label>
-	  <textarea id="sekwencje" ng-model ="sekwencje" class="form-control" rows="8" id="comment"></textarea>
+	  <textarea id="sekwencje" ng-model ="sekwencje" class="form-control" rows="8" id="comment" required ng-pattern="myRegex"></textarea>
 	  </br>
 		<button type="button" class="btn btn-info"  ng-click='medianSearchAlgorithm()'>Wykonaj algorytm </button>
 		<!--<button type="button" class="btn btn-info" ng-click='simpleStep()'>Pojedynczy krok algorytmu</button>-->
@@ -44,8 +47,9 @@
 	<div class="row">
 		<br>
 		<label for="sekwencje">Log wykonania</label>
-	<textarea id="sekwencje" ng-model ="log" class="form-control" rows="8" id="comment"></textarea>
+	<textarea id="log" ng-model ="log" class="form-control" rows="8" id="comment"></textarea>
 	</div>
+
 </div>
 
 
